@@ -4,9 +4,7 @@
   "homepage": "thepicture/is-trusted",
   "description": "Listen to events that are only originating from user",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "thepicture",
   "license": "ISC"
