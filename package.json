@@ -1,6 +1,6 @@
 {
   "name": "is-trusted",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "thepicture/is-trusted",
   "description": "Listen to events that are only originating from user",
   "main": "index.js",
