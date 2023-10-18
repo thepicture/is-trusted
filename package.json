@@ -5,7 +5,13 @@
   "description": "Listen to events that are only originating from user",
   "main": "index.js",
   "scripts": {},
-  "keywords": [],
+  "keywords": [
+    "is",
+    "trusted",
+    "onclick",
+    "event",
+    "security"
+  ],
   "author": "thepicture",
   "license": "ISC"
 }
