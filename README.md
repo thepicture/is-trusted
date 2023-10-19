@@ -8,6 +8,15 @@ Intercepts addEventListener by checking if the event is originated by user
 
 Append `index.js` script tag before all scripts in `head`
 
+## API
+
+```js
+window.addEventListener("addlistenerwrap", (event: CustomEvent<Function>));
+window.addEventListener("onwrap", (event: CustomEvent<Function>));
+window.addEventListener("addlistenerviolation", (event: CustomEvent<Args>));
+window.addEventListener("onwrapviolation", (event: CustomEvent<Args>));
+```
+
 ## Test
 
 ```js
