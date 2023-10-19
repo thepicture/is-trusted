@@ -11,10 +11,26 @@
           return originalAddEventListener.apply(this, args);
         }
 
+        window.dispatchEvent(
+          new CustomEvent("addlistenerwrap", {
+            detail: {
+              func: args[1],
+            },
+          })
+        );
+
         const [, originalListener] = args;
 
         const modifiedListener = function (...functionArgs) {
           if (functionArgs.some((arg) => arg && !arg.isTrusted)) {
+            window.dispatchEvent(
+              new CustomEvent("addlistenerviolation", {
+                detail: {
+                  args: functionArgs,
+                },
+              })
+            );
+
             return;
           }
 
@@ -37,8 +53,24 @@
 
             node[eventName] = null;
 
+            window.dispatchEvent(
+              new CustomEvent("onclickwrap", {
+                detail: {
+                  func: node[eventName],
+                },
+              })
+            );
+
             window.addEventListener(eventName.slice(2), function (...args) {
               if (args.some((arg) => arg && !arg.isTrusted)) {
+                window.dispatchEvent(
+                  new CustomEvent("onclickviolation", {
+                    detail: {
+                      args,
+                    },
+                  })
+                );
+
                 return;
               }
 
