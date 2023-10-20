@@ -1,8 +1,6 @@
 # is-trusted
 
-```
-Intercepts addEventListener by checking if the event is originated by user
-```
+Intercepts `addEventListener`, `attachEvent` and `on` events by checking origin of event
 
 ## Usage
 
@@ -11,10 +9,10 @@ Append `index.js` script tag before all scripts in `head`
 ## API
 
 ```js
-window.addEventListener("addlistenerwrap", (event: CustomEvent<Function>));
-window.addEventListener("onwrap", (event: CustomEvent<Function>));
-window.addEventListener("addlistenerviolation", (event: CustomEvent<Args>));
-window.addEventListener("onwrapviolation", (event: CustomEvent<Args>));
+window.addEventListener("addlistenerwrap", (event: CustomEvent<Function>)); // fires on addEventListener/attachEvent
+window.addEventListener("oneventwrap", (event: CustomEvent<Function>)); // fires when wrapping the original function for additional middleware
+window.addEventListener("addlistenerviolation", (event: CustomEvent<Args>)); // fires on addEventListener/attachEvent non-trusted event origin
+window.addEventListener("oneventviolation", (event: CustomEvent<Args>)); // fires on "on" event non-trusted origin
 ```
 
 ## Test
