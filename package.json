@@ -3,8 +3,10 @@
   "version": "1.0.5",
   "homepage": "thepicture/is-trusted",
   "description": "Listen to events that are only originating from user",
+  "files": [
+    "index.js"
+  ],
   "main": "index.js",
-  "scripts": {},
   "keywords": [
     "is",
     "trusted",
@@ -13,5 +15,8 @@
     "security"
   ],
   "author": "thepicture",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "1.39.0"
+  }
 }
