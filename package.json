@@ -2,11 +2,14 @@
   "name": "is-trusted",
   "version": "1.0.6",
   "homepage": "thepicture/is-trusted",
-  "description": "Listen to events that are only originating from user",
+  "description": "Listen to events that are originating from user",
   "files": [
     "index.js"
   ],
   "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
   "keywords": [
     "is",
     "trusted",
