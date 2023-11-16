@@ -15,7 +15,7 @@ window.addEventListener("addlistenerviolation", (event: CustomEvent<Args>)); // 
 window.addEventListener("oneventviolation", (event: CustomEvent<Args>)); // fires on "on" event non-trusted origin
 ```
 
-## Test
+## Example
 
 ```js
 (() => {
@@ -32,3 +32,7 @@ document.querySelector("b").dispatchEvent(new MouseEvent("click")); // event doe
 
 // Event fires on manual click
 ```
+
+## Test
+
+`npm test`
